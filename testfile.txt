@@ -1,1 +1,0 @@
-Creating a simple text file just to learn that how a simple file is created.
