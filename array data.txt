@@ -1,0 +1,183 @@
+random access
+int arr[8];
+32 bytes.
+arr[3];
+base address+ sizeof(data type)* (index-initialindex)
+100+4*3;
+112
+array name is base address.
+arrays are always passed by address or reference
+
+
+For 2 D array 
+
+row major
+arr[i][j]
+base address+ sizeof(data type)*((i-lb)*column size+(j-lb))
+lb is rows initial index
+jb is column initial index
+
+column major
+arr[i][j]
+base address+ sizeof(data type)*((j-lb)*row size+(i-lb))
+
+void fun(int element)
+{
+cout<<element;
+}
+void main()
+{
+ const numElems = 5;
+ int arr[numElems] = {2, 18, 1, 27, 16};
+ 
+ cout << "The average is " << find_average(arr, numElems) << endl;// passing whole array
+fun(arr[0]);  // passing inidividual element to function
+}
+float find_average(int vals[], int n)
+{
+ int i;
+ float avg;
+ 
+ avg=0.0;
+ for(i=0; i<n; i++)
+   avg += vals[i];
+ 
+ avg = avg/n;
+ 
+ return avg;
+} 
+
+
+2 D array
+
+int mat[2][2];
+
+cout<<"enter values"<<endl;
+for(int i=0; i<2;i++)
+{
+	for(int j=0;j<2;j++)
+	{
+		cin>>mat[i][j];
+	}
+}
+cout<<"matrix data is as follows"<<endl;
+for(int i=0; i<2;i++)
+{	
+	//cout<<"[ ";
+	for(int j=0;j<2;j++)
+	{
+		cout<<mat[i][j]<<" ";
+	}
+	//cout<<" ]"<<endl;
+}
+
+1. WAP to use static variable.
+2. WAP to calculate percentage of a student using array.
+3. WAP to calculate sum of two matrix.
+4. WAP to transpose a matrix.
+
+gcc filename.c   // compiling a program
+g++ filename.cpp   // compiling a program
+create default executable file on linux is a.out
+on windows is filename.exe
+
+./a.out        // run the program
+./filename.exe i like programming
+
+
+Command line arguments
+
+Arguments which are passed to the program when we are giving command 
+to run program.
+g++ q1.cpp   // compile command generate object as a.out
+./a.out  // run command
+
+ ./a.out My focus on the programming in different language.like arguments 1 2 3 4 5       // run the program
+
+int main(int argc, char  *argv[])   // this syntax of main method is used to receive command line arguments
+
+argc //  argument count   --- total no of arguments
+argv  // argument vector
+
+sentinal--- it is some different value in a collection of values and used as termination point in various operation performed on that collection
+
+structure with function
+1. passing structure to function
+2. return structure from function
+3. array of structure
+#include <iostream>
+
+using namespace std;
+struct employee
+{
+int  emp_id;
+char name[20];
+float salary;
+int age;  
+void display()
+{
+ cout<<"Employee Details are "<<endl;
+ cout<<emp_id<<endl;
+ cout<<name<<endl;
+ cout<<salary<<endl;
+ cout<<age<<endl;
+}
+};  
+void show( employee e)
+{
+ cout<<"Employee Details are "<<endl;
+ cout<<e.emp_id<<endl;
+ cout<<e.name<<endl;
+ cout<<e.salary<<endl;
+ cout<<e.age<<endl;
+}
+
+ employee read()
+{
+  employee s;
+ cout<< " enter the details employees"<<endl;
+ cout<<"enter the id"<<endl;
+ cin>>s.emp_id;
+ cout<<"enter the name"<<endl;
+ cin>>s.name;
+ cout<<"enter the salary"<<endl;
+ cin>>s.salary;
+ cout<<"enter the age"<<endl;
+ cin>>s.age;
+ return s;
+}
+int main()
+{
+    employee emparray[3];
+   
+   for(int i=0;i<3;i++)
+   {
+    emparray[i]=read();
+   }
+   for(int i=0;i<3;i++)
+   {
+    //show(emparray[i]);
+    emparray[i].display();
+   }
+   
+   return 0;
+} 
+
+int main()
+{ 
+    employee e1;  //structure value variable
+    int *s;
+employee *p;
+cout<<"sizeof  "<<sizeof(s)<<endl;
+cout<<"sizeof   "<<sizeof(p)<<endl;
+p=&e1;// static initialization
+p=new employee;   //dynamic 
+p->emp_id=30;
+    e1=read();
+    
+    show(e1);
+    return 0;
+}
+
+
+
