@@ -1,1 +1,0 @@
-Testing that whether pull operation is getting shown in local folder
